@@ -1,0 +1,20 @@
+version: "3"
+services:
+  frontend:
+    image: base-web-api
+    deploy:
+      replicas: 1
+    ports:
+      - "28820:80"
+    networks:
+      - basewebapinet
+  backend:
+    image: base-web-api
+    deploy:
+      replicas: 1
+    ports:
+      - "28821:80"
+    networks:
+      - basewebapinet
+networks:
+  basewebapinet:
